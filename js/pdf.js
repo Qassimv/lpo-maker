@@ -53,7 +53,7 @@ export function downloadPdf(order) {
   });
 
   // Totals: net, document discount, then VAT per rate group, then total
-  const rows = [['Net', fmt3(t.net)], ['Document discount', `-${fmt3(t.docDiscount)}`], ['Taxable', fmt3(t.taxable)]];
+  const rows = [['Net', fmt3(t.net)], ['Document discount', `-${fmt3(t.docDiscount)}`], ['Net after all discounts', fmt3(t.taxable)]];
   for (const g of t.groups) rows.push([`VAT ${pct(g.rate)} on ${fmt3(g.taxable)}`, fmt3(g.vat)]);
   rows.push(['Total BD', fmt3(t.total)]);
   doc.autoTable({

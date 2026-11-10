@@ -156,6 +156,7 @@ function updateTotals() {
     box.innerHTML = `<table>
       <tr><td>Net</td><td class="num mono">${fmt3(t.net)}</td></tr>
       <tr><td>Document discount</td><td class="num mono">-${fmt3(t.docDiscount)}</td></tr>
+      <tr><td>Net after all discounts</td><td class="num mono">${fmt3(t.taxable)}</td></tr>
       ${t.groups.map((g) => `<tr class="sub"><td>VAT ${pct(g.rate)} on ${fmt3(g.taxable)} <span class="hint">(discount share ${fmt3(g.discount)})</span></td>
         <td class="num mono">${fmt3(g.vat)}</td></tr>`).join('')}
       <tr class="grand"><td>Total BD</td><td class="num mono">${fmt3(t.total)}</td></tr></table>`;
