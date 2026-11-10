@@ -1,0 +1,8 @@
+{
+  "name": "lpo-maker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test tests/*.test.mjs" },
+  "devDependencies": { "jspdf": "2.5.2", "jspdf-autotable": "3.8.4" }
+}
